@@ -1,5 +1,5 @@
 
-node('vsv1') {
+node('suri43') {
 // Delete the workspace
 //deleteDir()
 stage('Retrieve source code') {
