@@ -6,7 +6,6 @@ stage('Retrieve source code') {
     checkout scm
     delivery = load 'repository.groovy'
     sh " cd $WORKSPACE;/bin/mkdir Build-${env.BUILD_NUMBER} "
-    sh " cd $WORKSPACE;/bin/mkdir vsvy "
     }
 try {
     stage('Maven Build') {
