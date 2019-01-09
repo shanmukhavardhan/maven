@@ -16,7 +16,7 @@ try {
        }
     }
    stage('Deploy') {
-        sh "/bin/mv -f $WORKSPACE/vsvy/vsvyadav.war /opt/apache-tomcat-8.5.37/webapps/vsvyadav.war"
+        sh "/bin/mv -f $WORKSPACE/vsvy/vsvyadav.war /opt/apache-tomcat-8.5.37/webapps/"
     }
   
    delivery.artifactory()
