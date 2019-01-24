@@ -12,11 +12,11 @@ try {
       docker.image('maven:3.5-jdk-8-alpine').inside {
         sh "mvn clean package -Dbuild.number=${BUILD_NUMBER}"
         sh "/bin/mv -f $WORKSPACE/target/*.war $WORKSPACE/Build-${env.BUILD_NUMBER}/vsvyadav_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war"
-        sh "/bin/cp -f $WORKSPACE/Build-${env.BUILD_NUMBER}/vsvyadav_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war $WORKSPACE/vsvy/vsvyadav.war"
+        sh "/bin/cp -f $WORKSPACE/Build-${env.BUILD_NUMBER}/vsvyadav_${env.BRANCH_NAME}${env.BUILD_NUMBER}.war $WORKSPACE/vsvyadav.war"
        }
     }
    stage('Deploy') {
-        sh "/bin/mv -f $WORKSPACE/vsvy/vsvyadav.war /opt/apache-tomcat-8.5.37/webapps/"
+        sh "/bin/mv -f $WORKSPACE/vsvyadav.war /opt/apache-tomcat-8.5.37/webapps/"
     }
   
    delivery.artifactory()
