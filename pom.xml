@@ -44,6 +44,18 @@
 </plugins>
     <finalName>vsvyadav-${build.number}</finalName>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <name>vardhanRelese</name>
+      <url>http://3.86.191.241:8081/repository/vardhanRelese/</url>
+    </repository>
+	<snapshotRepository>
+      <id>nexus</id>
+      <name>vardhanSnap</name>
+      <url>http://3.86.191.241:8081/repository/vardhanSnap/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
 
 
