@@ -1,5 +1,5 @@
 
-node('dev43') {
+node('mvn') {
 // Delete the workspace
 //deleteDir()
 stage('Retrieve source code') {
@@ -16,7 +16,7 @@ try {
        }
     }
    stage('Deploy') {
-        sh "/bin/mv -f $WORKSPACE/vsvyadav.war /opt/apache-tomcat-8.5.37/webapps/"
+        sh "/bin/mv -f $WORKSPACE/vsvyadav.war /opt/apache-tomcat-8.5.42/webapps/"
     }
   
    delivery.artifactory()
