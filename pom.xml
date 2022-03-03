@@ -8,9 +8,6 @@
   <name>sspWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
-  <activeProfiles>
-    <activeProfile>github</activeProfile>
-  </activeProfiles>
 
   <profiles>
     <profile>
