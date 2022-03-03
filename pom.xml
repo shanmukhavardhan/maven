@@ -27,14 +27,6 @@
       </repositories>
     </profile>
   </profiles>
-
-  <servers>
-    <server>
-      <id>github</id>
-      <username>Shanmukha@443</username>
-      <password>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</password>
-    </server>
-  </servers>
   <distributionManagement>
    <repository>
      <id>github</id>
