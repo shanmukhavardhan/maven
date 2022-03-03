@@ -44,6 +44,13 @@
 </plugins>
     <finalName>vsvyadav-${build.number}</finalName>
   </build>
+  <distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>GitHub Shanmukha Apache Maven Packages</name>
+     <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+   </repository>
+</distributionManagement>
   <!--<distributionManagement>
     <repository>
       <id>nexus</id>
