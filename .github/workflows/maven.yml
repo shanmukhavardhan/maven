@@ -27,6 +27,6 @@ jobs:
     - name: deplouy with Maven
       run: mvn clean package
     - name: Download a single artifact
-    - uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v3
       with:
        name: my-artifact
