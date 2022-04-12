@@ -28,5 +28,5 @@ jobs:
       run: mvn clean package
     - name: Download a single artifact
     - uses: actions/download-artifact@v3
-     with:
+      with:
        name: my-artifact
