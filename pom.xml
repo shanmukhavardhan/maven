@@ -1,37 +1,65 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sspcloudpro</groupId>
-  <artifactId>vsvyadav</artifactId>
+  <groupId>com.example.maven-project</groupId>
+  <artifactId>maven-project</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>sspWebApp Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-
-
-  <profiles>
-    <profile>
-      <id>github</id>
-      <repositories>
-        <repository>
-          <id>central</id>
-          <url>https://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
-          <id>github</id>
-          <url>https://maven.pkg.github.com/shanmukhavardhan/maven</url>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-        </repository>
-      </repositories>
-    </profile>
-  </profiles>
+  <url>http://maven.apache.org</url>	 
   <distributionManagement>
-   <repository>
-     <id>github</id>
-     <name>GitHub OWNER Apache Maven Packages</name>
-     <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
-   </repository>
+        <repository>
+            <id>github</id>
+            <name>GitHub Shanmukha Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/shanmukhavardhan/maven</url>
+        </repository>
   </distributionManagement>
+
+
+  <build>
+  <plugins>
+     <plugin>
+        <artifactId>Maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+     </plugin>
+     <plugin>
+        <groupId>org.apache.Maven.plugins</groupId>
+        <artifactId>Maven-jar-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <archive>
+             <index>true</index>
+             <manifest>
+                <addClasspath>true</addClasspath>
+             </manifest>
+             <manifestEntries>
+                <Implementation-Version>${build.number}</Implementation-Version>
+             </manifestEntries>
+          </archive>
+        </configuration>
+     </plugin>
+    <plugin>
+        <groupId>net.nicoulaj.maven.plugins</groupId>
+        <artifactId>checksum-maven-plugin</artifactId>
+        <version>1.9</version>
+        <executions>
+            <execution>
+            <goals>
+                <goal>artifacts</goal>
+            </goals>
+            </execution>
+        </executions>
+        <configuration>
+        <algorithms>
+            <algorithm>SHA-256</algorithm>
+        </algorithms>
+        </configuration>
+    </plugin>
+</plugins>
+    <finalName>vsvyadav</finalName>
+  </build>
 </project>
